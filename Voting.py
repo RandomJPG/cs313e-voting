@@ -96,3 +96,20 @@ class candidate:
 
 class election:
     '''
+    An Australiam voting election
+    '''
+
+    def __init__(self):
+        self.ballots = []
+        self.candidates = []
+        self.winners = []
+
+    def __str__(self):
+        '''
+        Returns the winner/winners of this election
+        '''
+
+    def solve(self):
+        '''
+        Determines the winner of the election
+        '''
