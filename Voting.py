@@ -28,7 +28,7 @@ class ballot:
     '''
     
     def __init__(self, line):
-       
+		
         self.marker = 0
         self.votes = []
 
@@ -36,8 +36,10 @@ class ballot:
             vote = int(vote)
             self.votes.append(vote)
 
+    def __str__(self):
+        return str(self.votes)
+		
     def getVote(self):
-       
         marker = self.marker
         self.marker += 1
         return self.votes[marker]
