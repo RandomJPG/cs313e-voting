@@ -9,12 +9,19 @@
 
 def voting_read (r):
     """
-    
-    read movies and users
-    r a reader
-    return a multi-dimensional list, 1st entry in each list is a movie number followed by customer ids
+    Reads the two lines
+    Determines the number of elections to process
     """
     
+    line = r.readline()
+    r.readline()
+
+    try:
+        num_elections = int(line)
+    except ValueError:
+        num_elections = 0
+
+    return num_elections
 
 # --------------
 # class Ballot
