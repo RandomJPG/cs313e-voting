@@ -69,10 +69,15 @@ class candidate:
         One list for each candidate
         '''
         
+        assert type(name) is str
+
         self.name = name
         self.ballots = []
+
+    def __str__(self):
+        return self.name
     
-    def add (self, ballot ):
+    def addVote (self, ballot ):
         '''
         Adds a ballot to candidate
         '''
@@ -118,9 +123,27 @@ class election:
         '''
         Returns the winner/winners of this election
         '''
+        
+        output = ""
 
+        for winner in self.winners
 
-    def solve(self):
+    def readBallots(self, r):
+        '''
+        Reads candidates
+        '''
+
+    def readCandidates(self, r):
+        '''
+        Reads ballots
+        '''
+
+    def read(self, r):
+        '''
+        Reads from both readCandidates and readBallots
+        '''
+
+    def run(self):
         '''
         Determines the winner of the election
         '''

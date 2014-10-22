@@ -56,17 +56,31 @@ class TestVoting (TestCase) :
     # candidate
     #----------
 
-    #Blank candidate 
+    #Blank candidate
     def test_candidate1(self):
+        candidates = candidate("")
+        self.assertEqual(str(candidates), "")
 
-    #No votes
+    #No vote
     def test_candidate2(self):
+        candidates = candidate("Abe")
+        self.assertEqual(str(candidates), "Abe")
 
     #One vote
     def test_candidate3(self):
+        candidates = candidate("Bob")
+        self.assertEqual(str(candidates), "Bob")
+        candidates.add(ballot(""))
+        self.assertEqual(candidates.numVotes(), 1)
 
-    #Multiple votes
+    #Multiple vote
     def test_candidate4(self):
+        candidates = candidate("Charlie")
+        self.assertEqual(str(candidates), "Charlie")
+        candidates.add(ballot(""))
+        candidates.add(ballot(""))
+        candidates.add(ballot(""))
+        self.assertEqual(candidates.numVotes(), 3)
 
     #----------
     # election
