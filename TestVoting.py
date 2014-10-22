@@ -23,17 +23,19 @@ class TestVoting (TestCase) :
     #--------
    
     #Blank ballot input
-    def test_ballot1(self):
-        r = StringIO(" ")
-        ballots = ballot(r)
-        self.assertEqual(ballots, [])
-        print (ballots)
+
 
     #Single ballot input
     def test_ballot2(self):
         r = StringIO("1")
         ballots = ballot(r)
         self.assertEqual(ballots.getVote(), 1)
+
+    #Multiple ballot input
+    def test_ballot3(self):
+        r = StringIO("1 2 3 4 5")
+        ballots = ballot(r)
+        print (ballots)
 
     #----------
     # candidate

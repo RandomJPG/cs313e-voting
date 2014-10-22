@@ -35,11 +35,13 @@ class ballot:
     '''
     
     def __init__(self, line):
+        assert type(line) is str
+
 		
         self.marker = 0
         self.votes = []
 
-        for vote in line:
+        for vote in line.split():
             vote = int(vote)
             self.votes.append(vote)
 
