@@ -35,9 +35,8 @@ class ballot:
     '''
     
     def __init__(self, line):
-        assert type(line) is str
-
-		
+        assert type(line) is str	
+	
         self.marker = 0
         self.votes = []
 
@@ -119,6 +118,7 @@ class election:
         '''
         Returns the winner/winners of this election
         '''
+
 
     def solve(self):
         '''
