@@ -126,24 +126,57 @@ class election:
         
         output = ""
 
-        for winner in self.winners
+        for winner in self.winners:
+            output += str(winner) + '\n'
+
+        return output
 
     def readBallots(self, r):
         '''
         Reads candidates
         '''
+        
+        line = r.readline()
+
+
 
     def readCandidates(self, r):
         '''
         Reads ballots
         '''
 
+        line = r.readline()
+
     def read(self, r):
         '''
         Reads from both readCandidates and readBallots
         '''
 
+        self.readBallots(r)
+        self.readCandidates(r)
+
     def run(self):
         '''
-        Determines the winner of the election
+        Runs election
         '''
+
+        while(True):
+
+            '''
+            Terminating condidtions
+            '''
+
+            #Check for a majority winner
+            half = len(self.ballots) // 2
+            for candidate in self.candidates:
+                if candidate.numVotes > half:
+                    self.winners = [candidate]
+                    return self.winners
+
+            #Check for a tie between all candidates
+            votes = []
+            for candidate in self.candidates:
+                numVotes = candidate.numVotes()
+                if numVotes != 0:
+                    votes.append(numVotes)
+      
