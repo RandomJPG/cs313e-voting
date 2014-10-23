@@ -22,13 +22,13 @@ class TestVoting (TestCase) :
     # ----
     
     # One line
-    def test_read_1(self):
+    def test_read1(self):
         r = StringIO("1 \n")
         read = voting_read(r)
         self.assertEqual(read, 1)
     
     # Multiple Lines
-    def test_read_2(self):
+    def test_read2(self):
         r = StringIO("2 \n""\nApple Pie")
         read = voting_read(r)
         self.assertEqual(read, 2)
@@ -139,10 +139,42 @@ class TestVoting (TestCase) :
     # Blank ballots
     def test_elections4(self):
        r = StringIO('')
-       elections =election()
+       elections = election()
        elections.readCandidates(r)
        self.assertEqual(len(elections.ballots), 0)
        self.assertEqual(elections.ballots, [])
+       
+    # One ballots   
+    def test_election5(self):
+        r = StringIO("4 3 1 2\n")
+        elections = election()
+        elections.readBallots(r)
+        self.assertEqual(len(elections.ballots), 1)
+        self.assertEqual(str(elections.ballots[0]), "[4, 3, 1, 2]")
+        
+    # Multiple ballots
+    def test_election6(self):
+        r = StringIO("4 2 1 5 3\n4 3 5 2 1\n 1 2 5 4 3")
+        elections = election()
+        elections.readBallots(r)
+        self.assertEqual(len(elections.ballots), 3)
+        self.assertEqual(str(elections.ballots[0]), "[4, 2, 1, 5, 3]")
+        self.assertEqual(str(elections.ballots[1]), "[4, 3, 5, 2, 1]")
+        self.assertEqual(str(elections.ballots[2]), "[1, 2, 5, 4, 3]")
+        
+    # Simple Input 1
+    def test_election7(self):
+        r = StringIO("3\nAbe\nBob\nCharlie\n1 2 3\n3 2 1\n2 1 3\n")
+        elections = election()
+        elections.read(r)
+        self.assertEqual(len(elections.candidates), 3)
+        self.assertEqual(str(elections.candidates[0]), "Abe")
+        self.assertEqual(str(elections.candidates[1]), "Bob")
+        self.assertEqual(str(elections.candidates[2]), "Charlie")
+        self.assertEqual(len(elections.ballots), 3)
+        self.assertEqual(str(elections.ballots[0]), "[1, 2, 3]")
+        self.assertEqual(str(elections.ballots[1]), "[3, 2, 1]")
+        self.assertEqual(str(elections.ballots[2]), "[2, 1, 3]")
     
 # ----
 # main
