@@ -91,6 +91,7 @@ class TestVoting (TestCase) :
     def test_candidate2(self):
         candidates = candidate("Abe")
         self.assertEqual(str(candidates), "Abe")
+        self.assertEqual(candidates.getBallots(), [])
 
     #One vote
     def test_candidate3(self):
@@ -107,6 +108,8 @@ class TestVoting (TestCase) :
         candidates.addVote(ballot(""))
         candidates.addVote(ballot(""))
         self.assertEqual(candidates.numVotes(), 3)
+        self.assertEqual(candidates.clear(), None)
+        self.assertEqual(candidates.getBallots(), [])
 
     # ----------
     # election
@@ -175,6 +178,15 @@ class TestVoting (TestCase) :
         self.assertEqual(str(elections.ballots[0]), "[1, 2, 3]")
         self.assertEqual(str(elections.ballots[1]), "[3, 2, 1]")
         self.assertEqual(str(elections.ballots[2]), "[2, 1, 3]")
+        self.assertEqual(str(elections), '')
+        
+    # Test Run
+    def test_election8(self):
+        r = StringIO("3\nJohn Doe\nJane Smith\nSirhan Sirhan\n1 2 3\n2 1 3\n 2 3 1\n1 2 3\n3 1 2")
+        elections = election()
+        elections.read(r)
+        elections.run()
+        self.assertEqual(str(elections), "John Doe\n")
     
 # ----
 # main
