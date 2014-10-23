@@ -136,10 +136,10 @@ class election:
         Reads ballots
         '''
         
-        while(True::
+        while(True):
             line = r.readline()
             ballots = ballot(line)
-            if line == "\n" or line="":
+            if line == "\n" or line == "":
                 break
             self.ballots.append(ballot)
 
@@ -206,38 +206,39 @@ class election:
                         votes.append(numVotes)
       
                 if len(votes) > 0 and votes.count(votes[0]) == len(votes):
-                    for candidate.numVotes() != 0:
+                    for candidate in self.candidates:
+                        candidate.numVotes() != 0
                         self.winners.append(candidate)
                     return self.winners
 
-               '''
-               Non-terminating condidtions
-               '''
-            
-               # Find candidate/candidates  with least votes
-               leastVotes = -1
-               for candidate in self.candidate:
-                   numVotes = candidate.numVotes()
+                '''
+			    No winner
+			    '''
+					
+			    # Find candidate/candidates  with least votes
+                leastVotes = -1
+                for candidate in self.candidate:
+                    numVotes = candidate.numVotes()
 
-                   if numVotes <= 0:
-                      continue
-                   if leastVotes == -1:
-                      leastVotes = numVotes
-                   else:
-                      leastVotes = min(leastVotes, numVotes)
+                    if numVotes <= 0:
+                       continue
+                    if leastVotes == -1:
+                       leastVotes = numVotes
+                    else:
+                       leastVotes = min(leastVotes, numVotes)
 
-               # Remove candidate/candidates with least votes
-               ballots = []
-               for candidate in self.candidate:
-                   if leastVotes == candidate.numVotes():
-                       ballots.extend(candidate.getBallots())
-                       candidate.remove()
+                # Remove candidate/candidates with least votes
+                ballots = []
+                for candidate in self.candidate:
+                    if leastVotes == candidate.numVotes():
+                      ballots.extend(candidate.getBallots())
+                      candidate.remove()
                
-               # Restribute
-               for ballot in ballots:
-                   while (True):
-                       vote = ballot.getVote()
-                       candidate = self.candidates[vote -1]
-                       if (canddiate.numVotes() !=0)
-                           candidate.add(ballot)
-                           break
+                # Restribute
+                for ballot in ballots:
+                    while (True):
+                      vote = ballot.getVote()
+                      candidate = self.candidates[vote -1]
+                      if (canddiate.numVotes() !=0):
+                          candidate.add(ballot)
+                          break
