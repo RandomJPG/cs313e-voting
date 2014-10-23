@@ -9,23 +9,23 @@
 
 import sys
 
-from voting import read, Election
+from Voting import voting_read, election
 
 # ----
 # main
 # ----
 
 def main():
-    numElections = read(sys.stdin)
+    numElections = voting_read(sys.stdin)
     
     while numElections > 0:
     
         elections = election()
-        election.read(sys.stdin)
-        election.evaluate()
-        print election
+        elections.read(sys.stdin)
+        elections.run()
+        print (elections)
         
         numElections -=1
  
- main()
+main()
 

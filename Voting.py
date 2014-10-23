@@ -15,12 +15,7 @@ def voting_read (r):
     
     line = r.readline()
     r.readline()
-
-    try:
-        num_elections = int(line)
-    except ValueError:
-        num_elections = 0
-
+    num_elections = int(line)
     return num_elections
 
 # --------------
@@ -31,7 +26,7 @@ class ballot:
 
     '''
     A ballot in an election
-    Contains a list of ints representing 
+    Contains a list of ints representing votes
     '''
     
     def __init__(self, line):
@@ -131,19 +126,6 @@ class election:
 
         return output
 
-    def readBallots(self, r):
-        '''
-        Reads ballots
-        '''
-        
-        while(True):
-            line = r.readline()
-            ballots = ballot(line)
-            if line == "\n" or line == "":
-                break
-            self.ballots.append(ballot)
-
-
     def readCandidates(self, r):
         '''
         Reads candidates
@@ -157,20 +139,32 @@ class election:
             candidates = 0
 
         while (candidates > 0):
-            line = reader.readline()
+            line = r.readline()
             line = line.strip()
-            candidate = candidate(line)
-            self.candidates.append(candidate)
+            Candidate = candidate(line)
+            self.candidates.append(Candidate)
 
             candidates -= 1    
+
+    def readBallots(self, r):
+        '''
+        Reads ballots
+        '''
+        
+        while(True):
+            line = r.readline()
+            ballots = ballot(line)
+            if line == "\n" or line == "":
+                break
+            self.ballots.append(ballots)
 
     def read(self, r):
         '''
         Reads from both readCandidates and readBallots
         '''
 
-        self.readBallots(r)
         self.readCandidates(r)
+        self.readBallots(r)
 
     def run(self):
         '''
@@ -180,10 +174,10 @@ class election:
         while(True):
 
             # Assign ballots to set up while loop
-            for ballot in self.Ballots:
+            for ballot in self.ballots:
                 vote = ballot.getVote()
-                candidate = self.candidate[vote - 1]
-                candidate.add(ballot)
+                candidate = self.candidates[vote - 1]
+                candidate.addVote(ballot)
             
             while(True):
 
@@ -194,7 +188,7 @@ class election:
                 #Check for a majority winner
                 half = len(self.ballots) // 2
                 for candidate in self.candidates:
-                    if candidate.numVotes > half:
+                    if candidate.numVotes() > half:
                         self.winners = [candidate]
                         return self.winners
 
@@ -212,12 +206,12 @@ class election:
                     return self.winners
 
                 '''
-			    No winner
+			    No clear winner
 			    '''
 					
 			    # Find candidate/candidates  with least votes
                 leastVotes = -1
-                for candidate in self.candidate:
+                for candidate in self.candidates:
                     numVotes = candidate.numVotes()
 
                     if numVotes <= 0:
@@ -229,16 +223,16 @@ class election:
 
                 # Remove candidate/candidates with least votes
                 ballots = []
-                for candidate in self.candidate:
+                for candidate in self.candidates:
                     if leastVotes == candidate.numVotes():
                       ballots.extend(candidate.getBallots())
-                      candidate.remove()
+                      candidate.clear()
                
                 # Restribute
                 for ballot in ballots:
                     while (True):
                       vote = ballot.getVote()
                       candidate = self.candidates[vote -1]
-                      if (canddiate.numVotes() !=0):
-                          candidate.add(ballot)
+                      if (candidate.numVotes() !=0):
+                          candidate.addVote(ballot)
                           break
