@@ -133,19 +133,36 @@ class election:
 
     def readBallots(self, r):
         '''
-        Reads candidates
+        Reads ballots
         '''
         
-        line = r.readline()
-
+        while(True::
+            line = r.readline()
+            ballots = ballot(line)
+            if line == "\n" or line="":
+                break
+            self.ballots.append(ballot)
 
 
     def readCandidates(self, r):
         '''
-        Reads ballots
+        Reads candidates
         '''
 
         line = r.readline()
+        
+        try:
+            candidates = int(line)
+        except ValueError:
+            candidates = 0
+
+        while (candidates > 0):
+            line = reader.readline()
+            line = line.strip()
+            candidate = candidate(line)
+            self.candidates.append(candidate)
+
+            candidates -= 1    
 
     def read(self, r):
         '''
@@ -162,21 +179,65 @@ class election:
 
         while(True):
 
-            '''
-            Terminating condidtions
-            '''
+            # Assign ballots to set up while loop
+            for ballot in self.Ballots:
+                vote = ballot.getVote()
+                candidate = self.candidate[vote - 1]
+                candidate.add(ballot)
+            
+            while(True):
 
-            #Check for a majority winner
-            half = len(self.ballots) // 2
-            for candidate in self.candidates:
-                if candidate.numVotes > half:
-                    self.winners = [candidate]
+                '''
+                Terminating condidtions
+                '''
+
+                #Check for a majority winner
+                half = len(self.ballots) // 2
+                for candidate in self.candidates:
+                    if candidate.numVotes > half:
+                        self.winners = [candidate]
+                        return self.winners
+
+                #Check for a tie between all candidates
+                votes = []
+                for candidate in self.candidates:
+                    numVotes = candidate.numVotes()
+                    if numVotes != 0:
+                        votes.append(numVotes)
+      
+                if len(votes) > 0 and votes.count(votes[0]) == len(votes):
+                    for candidate.numVotes() != 0:
+                        self.winners.append(candidate)
                     return self.winners
 
-            #Check for a tie between all candidates
-            votes = []
-            for candidate in self.candidates:
-                numVotes = candidate.numVotes()
-                if numVotes != 0:
-                    votes.append(numVotes)
-      
+               '''
+               Non-terminating condidtions
+               '''
+            
+               # Find candidate/candidates  with least votes
+               leastVotes = -1
+               for candidate in self.candidate:
+                   numVotes = candidate.numVotes()
+
+                   if numVotes <= 0:
+                      continue
+                   if leastVotes == -1:
+                      leastVotes = numVotes
+                   else:
+                      leastVotes = min(leastVotes, numVotes)
+
+               # Remove candidate/candidates with least votes
+               ballots = []
+               for candidate in self.candidate:
+                   if leastVotes == candidate.numVotes():
+                       ballots.extend(candidate.getBallots())
+                       candidate.remove()
+               
+               # Restribute
+               for ballot in ballots:
+                   while (True):
+                       vote = ballot.getVote()
+                       candidate = self.candidates[vote -1]
+                       if (canddiate.numVotes() !=0)
+                           candidate.add(ballot)
+                           break
