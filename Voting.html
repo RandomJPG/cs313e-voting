@@ -1,0 +1,101 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Voting</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Voting</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v35q001/jg56492/cs313e-voting/Voting.py">/v/filer4b/v35q001/jg56492/cs313e-voting/Voting.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-------------------------------<br>
+#&nbsp;Jacob&nbsp;Garcia<br>
+#&nbsp;jg56492<br>
+#&nbsp;-------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="Voting.html#ballot">ballot</a>
+</font></dt><dt><font face="helvetica, arial"><a href="Voting.html#candidate">candidate</a>
+</font></dt><dt><font face="helvetica, arial"><a href="Voting.html#election">election</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ballot">class <strong>ballot</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;<a href="#ballot">ballot</a>&nbsp;in&nbsp;an&nbsp;<a href="#election">election</a><br>
+Contains&nbsp;a&nbsp;list&nbsp;of&nbsp;ints&nbsp;representing&nbsp;votes<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ballot-__init__"><strong>__init__</strong></a>(self, line)</dt></dl>
+
+<dl><dt><a name="ballot-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ballot-getVote"><strong>getVote</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="candidate">class <strong>candidate</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;<a href="#candidate">candidate</a>&nbsp;in&nbsp;an&nbsp;<a href="#election">election</a><br>
+Has&nbsp;a&nbsp;asscioated&nbsp;name&nbsp;and&nbsp;<a href="#ballot">ballot</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="candidate-__init__"><strong>__init__</strong></a>(self, name)</dt><dd><tt>Constructor<br>
+One&nbsp;list&nbsp;for&nbsp;each&nbsp;<a href="#candidate">candidate</a></tt></dd></dl>
+
+<dl><dt><a name="candidate-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="candidate-addVote"><strong>addVote</strong></a>(self, ballot)</dt><dd><tt>Adds&nbsp;a&nbsp;<a href="#ballot">ballot</a>&nbsp;to&nbsp;<a href="#candidate">candidate</a></tt></dd></dl>
+
+<dl><dt><a name="candidate-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Resets&nbsp;all&nbsp;ballots&nbsp;from&nbsp;<a href="#candidate">candidate</a></tt></dd></dl>
+
+<dl><dt><a name="candidate-getBallots"><strong>getBallots</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;ballots&nbsp;for&nbsp;this&nbsp;<a href="#candidate">candidate</a></tt></dd></dl>
+
+<dl><dt><a name="candidate-numVotes"><strong>numVotes</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;votes&nbsp;for&nbsp;this&nbsp;<a href="#candidate">candidate</a></tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="election">class <strong>election</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;Australiam&nbsp;voting&nbsp;<a href="#election">election</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="election-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="election-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;winner/winners&nbsp;of&nbsp;this&nbsp;<a href="#election">election</a></tt></dd></dl>
+
+<dl><dt><a name="election-read"><strong>read</strong></a>(self, r)</dt><dd><tt>Reads&nbsp;from&nbsp;both&nbsp;readCandidates&nbsp;and&nbsp;readBallots</tt></dd></dl>
+
+<dl><dt><a name="election-readBallots"><strong>readBallots</strong></a>(self, r)</dt><dd><tt>Reads&nbsp;ballots</tt></dd></dl>
+
+<dl><dt><a name="election-readCandidates"><strong>readCandidates</strong></a>(self, r)</dt><dd><tt>Reads&nbsp;candidates</tt></dd></dl>
+
+<dl><dt><a name="election-run"><strong>run</strong></a>(self)</dt><dd><tt>Runs&nbsp;<a href="#election">election</a></tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-voting_read"><strong>voting_read</strong></a>(r)</dt><dd><tt>Reads&nbsp;the&nbsp;two&nbsp;lines<br>
+Determines&nbsp;the&nbsp;number&nbsp;of&nbsp;elections&nbsp;to&nbsp;process</tt></dd></dl>
+</td></tr></table>
+</body></html>
