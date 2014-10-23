@@ -187,6 +187,22 @@ class TestVoting (TestCase) :
         elections.read(r)
         elections.run()
         self.assertEqual(str(elections), "John Doe\n")
+        
+    # Test run with tie
+    def test_election9(self):
+        r= StringIO("2\nA\nB\n1 2\n2 1")
+        elections = election()
+        elections.read(r)
+        elections.run()
+        self.assertEqual(str(elections), "A\nB\n")
+    
+    # No clear winner but clear loser
+    def test_election10(self):
+        r = StringIO("4\nRed\nGreen\nBlue\nOrange\n1 2 3 4\n2 1 3 4\n2 3 1 4\n1 2 3 4\n3 4 1 2\n4 3 2 1")
+        elections = election()
+        elections.read(r)
+        elections.run()
+        self.assertEqual(str(elections), "Red\nGreen\n")
     
 # ----
 # main
