@@ -9,11 +9,23 @@
 
 import sys
 
-from voting import voting_read, voting_guess, voting_solve, voting_print, voting_dict
+from voting import read, Election
 
 # ----
 # main
 # ----
 
-voting_solve(sys.stdin, sys.stdout, c = open("/u/prat0318/voting-tests/erb988-ProbeAnswers.txt","r"), d1 = open("/u/prat0318/voting-tests/hs9234-mvrtg.txt", 'r'), d2 = open("/u/prat0318/voting-tests/kj8293-cacheUserAvg.txt", 'r') )
+def main():
+    numElections = read(sys.stdin)
+    
+    while numElections > 0:
+    
+        elections = election()
+        election.read(sys.stdin)
+        election.evaluate()
+        print election
+        
+        numElections -=1
+ 
+ main()
 
