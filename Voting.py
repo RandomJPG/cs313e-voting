@@ -186,7 +186,7 @@ class election:
                 '''
 
                 #Check for a majority winner
-                half = len(self.ballots) // 2
+                half = len(self.ballots) / 2
                 for candidate in self.candidates:
                     if candidate.numVotes() > half:
                         self.winners = [candidate]
@@ -201,8 +201,8 @@ class election:
       
                 if len(votes) > 0 and votes.count(votes[0]) == len(votes):
                     for candidate in self.candidates:
-                        candidate.numVotes() != 0
-                        self.winners.append(candidate)
+                        if candidate.numVotes() != 0:
+                            self.winners.append(candidate)
                     return self.winners
 
                 '''
