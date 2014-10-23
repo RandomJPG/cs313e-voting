@@ -1,0 +1,187 @@
+commit 929fba49479fbf398763dfa0cff47f7da7b632b7
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 04:34:23 2014 -0500
+
+    Ran pydoc
+
+commit e8597d0a9dc308de66038faba2da3758cb2c6456
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 04:16:27 2014 -0500
+
+    Fixed acceptance tests
+
+commit c3962f2fd26fb4666e58a30ca74e853a82469db3
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 04:07:15 2014 -0500
+
+    Coverage report
+
+commit 244083116d4913250c7911504f993c26c8cd37e8
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 04:05:03 2014 -0500
+
+    Added even more unit tests
+
+commit 3b43f8e4bbd527e5ffedfb05428649bf88c3cd7e
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 03:52:28 2014 -0500
+
+    Added coverage
+
+commit bba409d17b488e18fdd86e32f835379a7f253160
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 03:49:12 2014 -0500
+
+    Added more test cases
+
+commit 2e9fb74914658b2a79320dec5f9803222791d134
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 03:32:17 2014 -0500
+
+    Added coverage3 file
+
+commit f789dfbf4a5692f8219489ca656a5b16d41cb152
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 03:23:37 2014 -0500
+
+    Added unit tests
+
+commit 41033cf0e1d570c09faabba9b75e694bf6c36334
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 02:47:11 2014 -0500
+
+    Working output
+
+commit af87c61301881afab6edd12659940cd4f4c01cda
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 02:23:21 2014 -0500
+
+    Added output
+
+commit e47b845a263f2418334efe23c86d6bd6d19fb999
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 02:21:23 2014 -0500
+
+    Fuck you github
+
+commit 3f3405dee5ed07e1f2f1d3cfff8b5e7a730fc332
+Merge: b833434 4618d03
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 02:15:34 2014 -0500
+
+    Merge branch 'master' of https://github.com/RandomJPG/cs313e-voting
+
+commit b83343458421745e1d42b616cba325bc88d6d768
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 02:15:10 2014 -0500
+
+    thigns
+
+commit 4618d03a5e1963456f3f590e8e62cd7b0efa50a8
+Merge: abe1907 866677b
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 02:13:40 2014 -0500
+
+    pleasae just work
+
+commit abe19077846941f96ffbbac618d2d9ea8995e3d7
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 02:08:52 2014 -0500
+
+    DON't know
+
+commit 10862f81040b43c5df350d85dd52aa53b8ddfe2b
+Author: Jacob Garcia <jg56492@cs.utexas.edu>
+Date:   Thu Oct 23 02:06:19 2014 -0500
+
+    Added output file
+
+commit 866677b68c1e96c2936503db2c7670c69906a94b
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 02:03:24 2014 -0500
+
+    Added output file
+
+commit 89967313ef416f29d7831ac0d850e1257824ab89
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Thu Oct 23 02:01:32 2014 -0500
+
+    Trying to get program to work
+
+commit 8d2bdea5938f27300875b749ea57d5b77b16c93d
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Wed Oct 22 23:01:09 2014 -0500
+
+    Added run harness
+
+commit 65c00cd9a9e6ac2ba50f2c7c50b72cb67ec27d89
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Wed Oct 22 22:57:46 2014 -0500
+
+    Added Acceptance tests
+
+commit 05eee4da76176394a649f8363c39bb6ac4e84cd6
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Wed Oct 22 21:08:36 2014 -0500
+
+    Fixed spaceing issue
+
+commit a4deb90879ddc1d982f05c5ffe4ec6edfc9722e0
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Wed Oct 22 20:37:29 2014 -0500
+
+    Added algorithm for solve
+
+commit 771bcb73456cfc2de57fbd6316e35cb46fa2b71c
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Tue Oct 21 21:56:46 2014 -0500
+
+    Started working on algorithm for determining the winner of the election
+
+commit 524247706bade8e5a10e8095cc4842ed9854e113
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Tue Oct 21 21:38:34 2014 -0500
+
+    Added test cases for candidate class, implemented more functions to election class
+
+commit 261f71a0f73273146640a90dd64b97b214ac8d9f
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Tue Oct 21 20:49:03 2014 -0500
+
+    Added test cases for ballots
+
+commit 6b4f96cd72a3bd71ec7f0e3659ed5ee54f9b3d95
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Tue Oct 21 19:00:13 2014 -0500
+
+    Fixing issue where line is not reading as a string
+
+commit a23dc67a69a7e2569da6fa4eced03966f685042a
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Tue Oct 21 18:43:21 2014 -0500
+
+    Fixing test cases, implemented voting_read to get number of elections
+
+commit 600dc15c0328812e25542aadeebb9d7d3e997a68
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Tue Oct 21 18:23:20 2014 -0500
+
+    Added skeleton test cases
+
+commit ec448a0eb0709b3256dc3182f9d9bc7ef6dc10f2
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Mon Oct 20 18:48:59 2014 -0500
+
+    Skeleton code for election class
+
+commit a3e05d90a436ffeafd6b121cbab9637cf28010fb
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Mon Oct 20 18:38:46 2014 -0500
+
+    Created ballot and candidate classes
+
+commit d5585651c51f3e5fc8fa35b1d855b31e20545b36
+Author: Jacob Garcia <jpgarcia39@yahoo.com>
+Date:   Sun Oct 19 23:30:27 2014 -0500
+
+    Copied over Netflix.py, RunNetflix.py, and TestNetflix.py and converted them to work with Voting.
